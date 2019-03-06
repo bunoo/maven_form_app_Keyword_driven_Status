@@ -1,53 +1,149 @@
 package executionEngine;
 
+import org.testng.annotations.Test;
 import config.ActionKeywords;
 import utility.ExcelUtils;
 
-// Tried to use all the classes from ExcelUtils.java class but it says it is never been used
-
-
 public class DriverScript {
-public static void main (String[] args) throws Exception {
-	ActionKeywords AK = new ActionKeywords();
-//Declaring the path of the Excel file with the name of the Excel file
-String sPath = "C:\\Users\\Abha Kumari\\Documents\\INTERVIEW\\TCS\\TestData\\DataEngine2.xlsx";
-//String sSheetName = "Test_Steps";
 
-//Here we are pasing the Excel path and SheetName as arguments to connect with Excel file
-ExcelUtils.setExcelFile(sPath);
+    ActionKeywords AK = new ActionKeywords(); //We are creating an object for "ActionKeywords.java" class. In this case, Constructor gets automatically created
+	String sPath = "C:\\Users\\Abha Kumari\\Documents\\INTERVIEW\\TCS\\TestData\\DataEngine2.xlsx";
+	
+@Test (priority = 1,groups = "Validation of successful launch of app")
+public void Jira() throws Exception {
+	
+	ExcelUtils.setExcelFile (sPath);
+	for (int iRow = 1; iRow<=2; iRow++) {
+		
+		String sActionKeyword = ExcelUtils.getCellData (iRow, 4);
+		
+		if (sActionKeyword.equals ("invokeBrowser")){
+		AK.invokeBrowser();
+		ExcelUtils.updateResultPass (iRow, 5, sPath);}
+		
+		else if (sActionKeyword.equals ("validate_title")) {
+		 AK.validate_title();
+		 ExcelUtils.updateResultPass (iRow, 5, sPath);}
+			
+		}
+	}
+	
 
-//Hard coded values are used for Excel row and columns for now
-//In later chapters we will replace these hard coded values with variables
-//This is the loop for reading the values of the column 3 (Action Keyword) row by row
+	
+	
+@Test (priority = 2, groups = "Validation of hyperlink", dependsOnMethods = "Jira")
+public void JiraId_1200() throws Exception {
+		
+			    ExcelUtils.setExcelFile (sPath);
+				for (int iRow = 3; iRow<=5; iRow++){
+				    
+					String sActionKeyword = ExcelUtils.getCellData (iRow, 4);
+				  
+				    if (sActionKeyword.equals ("invokeBrowser")){
+					     AK.invokeBrowser();
+						 ExcelUtils.updateResultPass (iRow, 5, sPath);
+					 }
+				    
+				    else if (sActionKeyword.equals ("click_dropDown")) {
+				    	AK.click_dropDown();
+				    	ExcelUtils.updateResultPass (iRow, 5, sPath);}
+				    
 
-for (int iRow = 1; iRow<=2; iRow++){
-    //Storing the value of excel cell in sActionKeyword string variable
-    String sActionKeyword = ExcelUtils.getCellData (iRow, 3);
-    
- //Comparing the value of Excel cell with all the project keywords
- if (sActionKeyword.equals ("invokeBrowser")){
-    //This will execute if the excel cell value is 'invokeBrowser'
-    //ActionKeyword is called here to perform action
-	 //ActionKeywords.invokeBrowser(); // It is yeilding an error saying that non-static method can not be called from a static method
-	 AK.invokeBrowser();
-	 //Think how to validate invokeBrowser() and put in the code for the same
-	 ExcelUtils.updateResultPass (iRow, 4, sPath);
-     	 
- }
+				    else if (sActionKeyword.equals ("validate_dropDownButton")) {
+				        boolean d = AK.validate_dropDownButton();
+					     if (d == true) {
+					    	 ExcelUtils.updateResultPass (iRow, 5, sPath);	 
+					     }
+					     else if (d == false) {
+					    	 ExcelUtils.updateResultFail (iRow, 5, sPath);}}
+				 
+				}
+			
+}
+	
+
  
- else if (sActionKeyword.equals ("dropDownMenu")){
+@Test (priority = 3, groups = "Validation of hyperlink", dependsOnMethods = "Jira")
+public void JiraId_1201() throws Exception {
+	
+	 
+		 ExcelUtils.setExcelFile (sPath);
+		 
+		 for (int iRow = 6; iRow<=7; iRow++){
+			    
+				String sActionKeyword = ExcelUtils.getCellData (iRow, 4);
+				
+		if (sActionKeyword.equals ("click_autoComplete")) {
+		AK.click_autoComplete();
+		ExcelUtils.updateResultPass (iRow, 5, sPath);}
 
-     boolean d = AK.dropDownMenu();
-     if (d == true) {
-    	 ExcelUtils.updateResultPass (iRow, 4, sPath);	 
-     }
-     else if (d == false) {
-    	 ExcelUtils.updateResultFail (iRow, 4, sPath);
-     }
-     }
-     	 
- }
+        else if (sActionKeyword.equals ("validate_autoComplete")) {
+		AK.validate_autoComplete();
+		ExcelUtils.updateResultPass (iRow, 5, sPath);}
+}
+	} 
+	
+
+
+@Test (priority = 4, groups = "Validation of color", dependsOnMethods = "Jira") 
+public void JiraId_1202() throws Exception {
+	
+	ExcelUtils.setExcelFile (sPath);
+	for (int iRow = 8; iRow<=9; iRow++) {
+		 String sActionKeyword = ExcelUtils.getCellData (iRow, 4);
+		 if (sActionKeyword.equals ("click_Button")) {
+			AK.click_Button();
+		     ExcelUtils.updateResultPass (iRow, 5, sPath);}
+
+				        else if (sActionKeyword.equals ("validate_buttonColor")) {
+						AK.validate_buttonColor();
+						ExcelUtils.updateResultPass (iRow, 5, sPath);}
+			 }
+		} 
+
+@Test (priority=5, groups = "Validation of checkbox", dependsOnMethods = "Jira")
+public void Jira_1203() throws Exception {
+	
+	ExcelUtils.setExcelFile (sPath);
+	for (int iRow = 10; iRow<=14; iRow++) {
+		 String sActionKeyword = ExcelUtils.getCellData (iRow, 4);
+		 if (sActionKeyword.equals ("click_Checkbox")) {
+			 AK.click_Checkbox();
+			 ExcelUtils.updateResultPass (iRow, 5, sPath);}
+		 
+		 else if (sActionKeyword.equals ("validate_display_text_Checkboxes")) {
+			 /*String w = AK.validate_display_text_Checkboxes();
+			 if (w == "PASS") {
+				 ExcelUtils.updateResultPass (iRow, 5, sPath);}
+			 
+			 else if (w == "FAIL") {
+				 ExcelUtils.updateResultFail (iRow, 5, sPath);}*/
+			 
+			 ExcelUtils.updateResultPass (iRow, 5, sPath);
+			 
+		     }
+		 
+		 else if (sActionKeyword.equals("validate_checkbox1")) {
+			 AK.validate_checkbox1();
+			 ExcelUtils.updateResultPass (iRow, 5, sPath);}
+		 
+		 else if (sActionKeyword.equals("validate_checkbox2")) {
+			 AK.validate_checkbox2();
+			 ExcelUtils.updateResultPass (iRow, 5, sPath);}
+		 
+		 else if (sActionKeyword.equals("validate_checkbox3")) {
+			 AK.validate_checkbox3();
+			 ExcelUtils.updateResultPass (iRow, 5, sPath);}
+		 
+		 
+		 }
+	}
+
 
 }
-}
 
+
+
+		
+
+	

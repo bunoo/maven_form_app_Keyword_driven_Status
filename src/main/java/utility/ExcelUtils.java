@@ -48,9 +48,14 @@ public class ExcelUtils {
 	//IN this we are passing parameters/arguments as RowNum and ColNum
 	
 	public static String getCellData (int RowNum, int ColNum) throws Exception{
-		Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
-		String CellData = Cell.getStringCellValue();
+		Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum); //It gets co-ordinates of the intended cell (e.g. 1,4) and stores in Cell variable
+		String CellData = Cell.getStringCellValue(); // It gets the string value corresponding to the Cell co-ordinate
 		return CellData;
+	}
+	
+	public void clear_cellData (int RowNum, int ColNum) {
+		
+		
 	}
 	
 	public static void updateResultPass (int resultRow, int resultCol, String optStream) {

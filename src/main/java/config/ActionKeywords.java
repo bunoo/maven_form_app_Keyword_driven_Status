@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utility.ExcelUtils;
@@ -21,6 +22,8 @@ public class ActionKeywords {
 
    WebDriver driver;
    JavascriptExecutor jse;
+   WebDriverWait wait;
+   
    public void invokeBrowser() {
 	   
 	   System.setProperty("webdriver.chrome.driver","C:\\Users\\Abha Kumari\\Documents\\INTERVIEW\\SELENIUM\\chromedriver\\chromedriver.exe");
@@ -31,34 +34,49 @@ public class ActionKeywords {
 	   driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
    }
    
+   public void validate_title() {
+	   
+	   launchURL();
+	   String vt = driver.getTitle();
+	   //String vt = driver.getCurrentUrl();
+	   Assert.assertEquals(vt, "Formy", "YOU ARE AT WRONG PAGE");
+   }
+   
    public void launchURL() {
 	   driver.get("http://formy-project.herokuapp.com/");  
    }
 
-   public void autoComplete() {
+   public void click_autoComplete() {
 	   
 	   launchURL();
-	   WebDriverWait wait=new WebDriverWait(driver, 20); //Explicit wait
+	   WebDriverWait wait=new WebDriverWait(driver, 5); //Explicit wait
 	   WebElement btnAutocomplete = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='btn btn-lg' and @href='/autocomplete']")));
-	   btnAutocomplete.click();
-	   WebElement Address = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("autocomplete")));
-	   Address.clear();
-	   Address.sendKeys("1555 Park Blvd, Palo Alto, CA");
-           //Write down code for selecting from the drop down Menu.class Below piece of code is not working
-		   //Thread.sleep(5000);
-		   //WebElement searchDropdown = driver.findElement(By.className("pac-item"));
-		   //WebElement searchDropdown = driver.findElement(By.className("pac-item")); //This will by default select the 1st value from the Search drop down.
-		   //searchDropdown.click();
-	  
-}
+	   btnAutocomplete.click();}
    
-   public void buttonColor() {
-	   
+   public void validate_autoComplete() {
+	 
+	   WebDriverWait wait=new WebDriverWait(driver, 20); //Explicit wait
+	   //BELOW SCENARIO IS FAILING INTENTIONALLY. IF YOU WANT TO GET IT PASSES, REMOVE THE ".." FROM THE OBJECT LOCATOR
+	   WebElement Address = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("autocomplete..")));
+	   Address.click();
+	   Address.clear();
+	   Address.sendKeys("1555 Park Blvd, Palo Alto, CA"); //Ty to explore a way to choose a value from the dropdown, probably by slow typing this can be sorted out
+   }
+   public void click_Button() {
 	   launchURL();
 	   WebDriverWait wait=new WebDriverWait(driver, 20); //Explicit wait
 	   WebElement btn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='btn btn-lg' and @href='/buttons']")));
        btn.click();
-
+   }
+   
+   public void validate_buttonColor()   {
+	   
+	   WebDriverWait wait=new WebDriverWait(driver, 20); //Explicit wait
+	   WebElement prButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@type='button' and @class='btn btn-lg btn-primary']")));
+	   boolean z = prButton.isDisplayed();
+	    
+	   
+	   if (z==true) {
 	   String PRIMARYbtnColor = driver.findElement(By.xpath("//button[@type='button' and @class='btn btn-lg btn-primary']")).getCssValue("color");
 	   System.out.println("PRIMARY button color is "+PRIMARYbtnColor);
 	     
@@ -72,6 +90,10 @@ public class ActionKeywords {
 	   String actualColor = String.format("#%02x%02x%02x", hexValue1, hexValue2, hexValue3);
 	   System.out.println("PRIMARY button color is "+actualColor);  //This returns "PRIMARY button color is #ffffff"
    }
+	   else if (z==false) {
+		   System.out.println("FIND OUT A WAY OF HANDLING NEGATIVE SCENARIO");   }
+	   }
+   
    
    public void Datepicker() {
 		
@@ -171,31 +193,44 @@ public class ActionKeywords {
                    
 				   } */
  
- public boolean dropDownMenu() { 
-		//We first click on "Components" and then click on "dropDonMenu" option
-				   launchURL();
-				   WebDriverWait wait=new WebDriverWait(driver, 20); //Explicit wait
-				   WebElement Components = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("navbarDropdownMenuLink")));
-				   Components.click();
-				   WebElement dropdown = driver.findElement(By.xpath("//a[@class='dropdown-item' and @href='/dropdown']"));				   
-				   dropdown.click();
-				   try {
-					Thread.sleep(5000); //Later on put dynamic wait
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} 
-				   //Validation Step
-				   //WebElement drop_down_menu = driver.findElement(By.id("dropdownMenuButtonn"));
-				   WebElement drop_down_menu = driver.findElement (By.cssSelector("button#dropdownMenuButtonn"));
-				   boolean x =drop_down_menu.isDisplayed();
-				   return x;
-				   //WebElement drop_down_menu = driver.findElement(By.cssSelector(""))
-				
-				   //System.out.println("The value is "+a); -- It will not print because you already emptied the string. That is why I have used it b4 returning
-				   }
+
+ public void click_dropDown() {
+	//We first click on "Components" and then click on "dropDonMenu" option
+	   launchURL();
+	   WebDriverWait wait=new WebDriverWait(driver, 20); //Explicit wait
+	   WebElement Components = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("navbarDropdownMenuLink")));
+	   Components.click();
+	   WebElement dropdown = driver.findElement(By.xpath("//a[@class='dropdown-item' and @href='/dropdown']"));				   
+	   dropdown.click(); //Later on explore the way how to validate the click op
+ }
  
-   
+public boolean validate_dropDownButton() { 
+	
+	   WebDriverWait wait=new WebDriverWait(driver, 5); //Explicit wait
+	   //BELOW SCENARIO IS FAILING INTENTIONALLY. IF YOU WANT TO GET IT PASSES, REMOVE THE ".." FROM THE OBJECT LOCATOR
+	   WebElement drop_down_menu = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button#dropdownMenuButton..")));
+
+	
+	//Later on put dynamic wait
+	   //WebElement drop_down_menu = driver.findElement(By.id("dropdownMenuButtonn"));
+	   
+	   boolean x = drop_down_menu.isDisplayed();
+	   return x;
+}
+ 
+/* public void validate_dropDownButton() { 
+		
+	   try {
+		Thread.sleep(5000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} //Later on put dynamic wait
+	   //WebElement drop_down_menu = driver.findElement(By.id("dropdownMenuButtonn"));
+	   WebElement expected_drop_down_menu = driver.findElement (By.cssSelector("button#dropdownMenuButton"));
+	   WebElement actual_drop_down_menu = driver.findElement (By.cssSelector("button#dropdownMenuButton"));
+	   Assert.assertEquals(actual_drop_down_menu, expected_drop_down_menu);
+}*/
    public void fileupload() {
 	   try {
 		   launchURL();
@@ -236,4 +271,83 @@ public class ActionKeywords {
 	   System.out.println("Background color is "+btn_bg);
 	   
    }
+   
+   public void click_Checkbox() {
+	   
+	   launchURL();
+	   WebDriverWait wait=new WebDriverWait(driver, 5); //Explicit wait
+	   WebElement checkbox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='btn btn-lg' and @href='/checkbox']")));
+	   checkbox.click();  
+   }
+   
+   public void validate_display_text_Checkboxes () {
+	   
+	 //BELOW SCENARIO IS FAILING INTENTIONALLY. IF YOU WANT TO GET IT PASSES, REMOVE THE ".." FROM THE OBJECT LOCATOR
+	   boolean act_contain_chkboxes = driver.getPageSource().contains("Checkboxes");
+	   boolean exp_contain_chkboxes = driver.getPageSource().contains("FAIL");
+	   //Assert.assertEquals(contain_chkboxes, true, "CHECKBOXES TEXT IS MISSING ON THE PAGE");}
+	   Assert.assertEquals(act_contain_chkboxes, exp_contain_chkboxes);
+   }
+   
+   public void validate_checkbox1 () {
+	   //WebElement chkbox1 = driver.findElement(By.xpath("//input[@type='checkbox' and id='checkbox-1' and aria-label='checkbox' and value='checkbox-1']"));
+	   WebElement chkbox1 = driver.findElement(By.id("checkbox-1")); //TRY TO IDENTIFY THE ELEMENT USING THE XPATH AS WRITTEN ABOVE. DIAGNOSE THE PROBLEM WHY THAT IS FAILING
+	   boolean a = chkbox1.isDisplayed(); // LATER ON TRY THIS WITH ASSERT CLASS
+	   
+	   if (a == true) {
+		   chkbox1.click();
+		   
+          boolean isChecked1 = chkbox1.isSelected();
+		   
+		   if (isChecked1 == true) {
+			   Assert.assertEquals(isChecked1, true, "USER IS NOT ABLE TO SELECT THE CHECKBOX1");}
+		   
+	   }
+	   
+
+	   else if (a == false) {
+		   // write down testNG code which results into failure. The benefit is that the error details will be displayed in the testNG reports
+	   }
+     }
+	  
+	   
+   public void validate_checkbox2 () {	  
+	   WebElement chkbox2 = driver.findElement(By.id("checkbox-2"));
+	   boolean b = chkbox2.isDisplayed();
+	   
+	   if (b == true) {
+		   chkbox2.click();
+		   boolean isChecked2 = chkbox2.isSelected();
+		   
+		   if (isChecked2 == true) {
+			   Assert.assertEquals(isChecked2, true, "USER IS NOT ABLE TO SELECT THE CHECKBOX1");}
+		   
+	   }
+	   
+	   else if (b == false) {
+		   // write down testNG code which results into failure. The benefit is that the error details will be displayed in the testNG reports
+	   }
+	}
+   
+   
+   public void validate_checkbox3 () {	  
+	   WebElement chkbox3 = driver.findElement(By.id("checkbox-3"));
+	   boolean c = chkbox3.isDisplayed();
+	   
+	   if (c == true) {
+		   chkbox3.click();
+           boolean isChecked3 = chkbox3.isSelected();
+		   
+		   if (isChecked3 == true) {
+			   Assert.assertEquals(isChecked3, true, "USER IS NOT ABLE TO SELECT THE CHECKBOX1");}
+	   }
+	   
+	   else if (c == false) {
+		   // write down testNG code which results into failure. The benefit is that the error details will be displayed in the testNG reports
+	   }
+	}
+   
+   
+   
+   
 }
