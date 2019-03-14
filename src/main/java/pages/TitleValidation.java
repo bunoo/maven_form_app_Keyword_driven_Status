@@ -7,6 +7,9 @@ import org.testng.Assert;
 public class TitleValidation {
 	WebDriver driver; //Why do I need to declare driver here when it is already declared in the "BaseClass.java" and the same is imported in this class??
 	
+	public TitleValidation (WebDriver driver) {
+		this.driver = driver;
+	}
 	public void validate_title() {
 		
 		   System.out.println("ok1");

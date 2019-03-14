@@ -18,22 +18,33 @@ import org.testng.Assert;
 public class BaseClass {
 
    WebDriver driver;
+   
    JavascriptExecutor jse;
    WebDriverWait wait;
    
+   //Declare the contents of "invokeBrowser()" method of "BaseClass.java" as a parameter in the class directly, so that if 
+   //any method of "HyperlinkValidation.java" wants to use "driver", he can understand driver. Let us comment out the below method :
+   
+   public WebDriver returnDriver() {
+	   System.setProperty("webdriver.chrome.driver","C:\\Users\\Abha Kumari\\Documents\\INTERVIEW\\SELENIUM\\chromedriver\\chromedriver.exe");
+	   driver = new ChromeDriver();
+	   return driver;
+	   
+   }
    
    public void invokeBrowser() {
 	   
-	   System.setProperty("webdriver.chrome.driver","C:\\Users\\Abha Kumari\\Documents\\INTERVIEW\\SELENIUM\\chromedriver\\chromedriver.exe");
-	   driver = new ChromeDriver();
+	   returnDriver();
 	   driver.manage().deleteAllCookies();
 	   driver.manage().window().maximize();
 	   driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	   driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
+	   launchURL();
    }
    
    
-   
+
+	 
    public void launchURL() {
 	   driver.get("http://formy-project.herokuapp.com/");  
    }
