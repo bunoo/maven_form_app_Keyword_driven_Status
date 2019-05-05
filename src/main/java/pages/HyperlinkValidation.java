@@ -3,56 +3,73 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
-
-public class HyperlinkValidation {
+    public class HyperlinkValidation {
 
 	WebDriver driver;
+	WebDriverWait wait;
+	Actions actions;
 	
+	/*Parameterized Constructor*/	
 	public HyperlinkValidation (WebDriver driver) {
-		this.driver = driver;
+        this.driver = driver;
+        wait = new WebDriverWait(driver, 5);
+        actions = new Actions (driver);
+        PageFactory.initElements(driver,this);
+    }
+
+	
+	/* Define web elements using @FindBy annotation as WebElement */
+	/*---- I have used How class as well  ---- */
+	/*---- Use @CacheLookup for some elements. It will store the . It stores the WebElement in the cache m/y, so the system does not look onto the web page.
+	Hence it increases the performance in the long run.  ----*/
+	
+	@FindBy(xpath = "//a[@class='dropdown-item' and @href='/dropdown']") @CacheLookup WebElement dropdown;
+	@FindBy (id = "autocomplete") @CacheLookup WebElement Address;
+	@FindBy (how = How.ID, using = "navbarDropdownMenuLink") @CacheLookup WebElement Components;
+	@FindBy (how = How.XPATH, using = "//a[@class='btn btn-lg' and @href='/autocomplete']") @CacheLookup WebElement btnAutocomplete;
+	//@FindBy (how = How.CSS, using = "button#dropdownMenuButton") @CacheLookup WebElement drop_down_btn;
+	@FindBy (css = "button#dropdownMenuButton") WebElement drop_down_btn;
+	
+	
+	/*LEARNING BITE : FOR -VE TESTING, YOU CAN PUT A DOT IN THE OBJECTS LOCATED ABOVE*/
+	
+	/*Below are the implementations*/
+	public void click_dropDown() {
+		
+		wait.until(ExpectedConditions.visibilityOf(Components)).click();  
+		wait.until(ExpectedConditions.visibilityOf(dropdown)).click();
 	}
 	 
-	
-	
-	public void click_dropDown() {
-		   
-           
-		   WebDriverWait wait=new WebDriverWait(driver, 5); //Explicit wait
-		   WebElement Components = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("navbarDropdownMenuLink")));
-		   Components.click();
-		   WebElement dropdown = driver.findElement(By.xpath("//a[@class='dropdown-item' and @href='/dropdown']"));				   
-		   dropdown.click(); //Later on explore the way how to validate the click op
-	 }
-	 
 	public boolean validate_dropDownButton() { 
-		
-		   WebDriverWait wait=new WebDriverWait(driver, 5); //Explicit wait
-		   //BELOW SCENARIO IS FAILING INTENTIONALLY. IF YOU WANT TO GET IT PASSES, REMOVE THE ".." FROM THE OBJECT LOCATOR
-		   WebElement drop_down_menu = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button#dropdownMenuButton")));
-           boolean x = drop_down_menu.isDisplayed();
+		   
+		   wait.until(ExpectedConditions.visibilityOf(drop_down_btn));
+           boolean x = drop_down_btn.isDisplayed();
 		   return x;
 	}
 	
 	public void click_autoComplete() {
-		   
-		   WebDriverWait wait=new WebDriverWait(driver, 5); //Explicit wait
-		   WebElement btnAutocomplete = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='btn btn-lg' and @href='/autocomplete']")));
-		   btnAutocomplete.click();}
-	   
-	   public void validate_autoComplete() {
+		
+		wait.until(ExpectedConditions.visibilityOf(btnAutocomplete)).click();
+		}
+	
+	public void rightClick_autoComplete() {
+		
+		actions.contextClick(btnAutocomplete).perform();
+	}
+	
+	public void validate_autoComplete() {
 		 
-		   WebDriverWait wait=new WebDriverWait(driver, 5); //Explicit wait
-		   //BELOW SCENARIO IS FAILING INTENTIONALLY. IF YOU WANT TO GET IT PASSES, REMOVE THE ".." FROM THE OBJECT LOCATOR
-		   WebElement Address = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("autocomplete")));
-		   Address.click();
+		   wait.until(ExpectedConditions.visibilityOf(Address)).click();
 		   Address.clear();
 		   Address.sendKeys("1555 Park Blvd, Palo Alto, CA"); 
-		   //TRY TO EXPLORE A WAY TO CHOOSE A VALUE FROM THE DROPDOWN, PROBABLY BY SLOW TYPING, THIS CAN BE SORTED OUT
-		   
 	   }
 	
 }
