@@ -5,8 +5,10 @@
     <classes>
       <class name="test.DriverScript">
         <methods>
-          <include name="Jira_1205"/>
+          <include name="Jira_1203"/>
+          <include name="closeTheSession"/>
           <include name="pre_requisute"/>
+          <include name="JiraId_1206"/>
         </methods>
       </class> <!-- test.DriverScript -->
     </classes>

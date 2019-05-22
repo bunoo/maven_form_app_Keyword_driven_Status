@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -10,6 +11,9 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import utility.ExcelUtils;
+
 
     public class HyperlinkValidation {
 
@@ -37,6 +41,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 	@FindBy (how = How.XPATH, using = "//a[@class='btn btn-lg' and @href='/autocomplete']") @CacheLookup WebElement btnAutocomplete;
 	//@FindBy (how = How.CSS, using = "button#dropdownMenuButton") @CacheLookup WebElement drop_down_btn;
 	@FindBy (css = "button#dropdownMenuButton") WebElement drop_down_btn;
+	@FindBy (xpath = "//input[@type = 'text' and @class= 'form-control' and @id= 'postal_code' and @placeholder='Zip code']") WebElement zip_code;
 	
 	
 	/*LEARNING BITE : FOR -VE TESTING, YOU CAN PUT A DOT IN THE OBJECTS LOCATED ABOVE*/
@@ -65,11 +70,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 		actions.contextClick(btnAutocomplete).perform();
 	}
 	
-	public void validate_autoComplete() {
+	public void validate_autoComplete(String address_text, String zipCode) throws Exception {
 		 
-		   wait.until(ExpectedConditions.visibilityOf(Address)).click();
-		   Address.clear();
-		   Address.sendKeys("1555 Park Blvd, Palo Alto, CA"); 
-	   }
-	
+		       wait.until(ExpectedConditions.visibilityOf(Address)).click();
+			   Address.clear();
+			   Address.sendKeys(address_text);
+			   Thread.sleep(4000); /* Explore a way to implement Explicit wait to validate the appearance of Suggestion Box */
+			   
+			   actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.RETURN).build().perform();
+			   Thread.sleep(4000);
+
+               String zip_code_act = zip_code.getAttribute("value").concat("a");
+			   Assert.assertEquals(zip_code_act, zipCode, "the wrong value is rendered");
+		      
 }
+}	

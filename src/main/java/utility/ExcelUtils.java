@@ -17,7 +17,7 @@ public class ExcelUtils {
 	//This method is to set the File path and to open the excel file
 	//Pass Excel Path and SheetName as Arguments to this method
 	
-	public static void setExcelFile(String Path) { 
+	public static void setExcelFile(String Path, int i) { 
 	    
 			try {
 				//Open the Excel file
@@ -26,11 +26,11 @@ public class ExcelUtils {
 				
 				ExcelWBook = new XSSFWorkbook (ExcelFile);
 				//ExcelWSheet = ExcelWBook.getSheet(SheetName);
-				ExcelWSheet = ExcelWBook.getSheetAt(0);
+				ExcelWSheet = ExcelWBook.getSheetAt(i);
 				//ExcelWSheet.getRowCount () --TRy to know how to get the total no. of rows
 				//ExcelWSheet.addcolumn () -- There is no explicit way of adding a column. It can be done indirectly. Fill in the cell with value = "Result"
 				//ExcelWSheet.addSheet () //How to add a new sheet
-				//Do "ExcelWSheet." and try to explore other functions as much as possibe
+				//Do "ExcelWSheet." and try to explore other functions as much as possible
 				
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block

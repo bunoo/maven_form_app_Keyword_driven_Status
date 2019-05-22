@@ -52,8 +52,7 @@ public class DatePickerValidation {
 		int currentDate = calendar.get(Calendar.DAY_OF_MONTH);
 		int sevendays = currentDate + 7;
 		System.out.println("T+7 is "+sevendays); //Working fine
-	
-	}
+}
 	
 	
 }
