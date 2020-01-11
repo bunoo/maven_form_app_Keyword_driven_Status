@@ -5,9 +5,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 
-public class TitleValidation {
-	WebDriver driver;
-	WebDriverWait wait;
+public class TitleValidation extends HomePage {
 	
 	/* Define a parameterized Constructor*/
 	public TitleValidation (WebDriver driver, WebDriverWait wait) {

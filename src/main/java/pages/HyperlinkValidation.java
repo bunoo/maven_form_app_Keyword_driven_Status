@@ -15,11 +15,8 @@ import org.testng.Assert;
 import utility.ExcelUtils;
 
 
-    public class HyperlinkValidation {
+    public class HyperlinkValidation extends HomePage {
 
-	WebDriver driver;
-	WebDriverWait wait;
-	Actions actions;
 	
 	/*Parameterized Constructor*/	
 	public HyperlinkValidation (WebDriver driver) {

@@ -15,12 +15,13 @@ import pages.DatePickerValidation;
 import pages.Form;
 import pages.HyperlinkValidation;
 import pages.TitleValidation;
+import pages.WebBasedPopUp;
 import utility.ExcelUtils;
 
 public class DriverScript {
 
 	WebDriver driver;
-    String sPath = "C:\\Users\\Abha Kumari\\Documents\\INTERVIEW\\TCS\\TestData\\DataEngine2.xlsx";
+    String sPath = "D:\\INTERVIEW\\SELENIUM\\Test_Data\\DataEngine2.xlsx";
     WebDriverWait wait;
 
 public void launchURL() {
@@ -31,7 +32,9 @@ public void launchURL() {
 @BeforeTest
 public void pre_requisute() {
 
-	System.setProperty("webdriver.chrome.driver","C:\\Users\\Abha Kumari\\Documents\\INTERVIEW\\SELENIUM\\chromedriver\\chromedriver.exe");
+	/*Setting up browser properties*/
+	
+	System.setProperty("webdriver.chrome.driver","D:\\INTERVIEW\\SELENIUM\\chromedriver\\chromedriver.exe");
 	driver = new ChromeDriver();
 	driver.manage().deleteAllCookies();
 	driver.manage().window().maximize();
@@ -214,6 +217,7 @@ public void Jira_1204() throws Exception {
 }*/
 
 //@Test (priority = 6, groups = "Validation of Date picker", dependsOnMethods = "Jira")
+/* PS: The test is running fine in isolation, but in when we run in combination it throws error. */
 /*@Test (priority = 6, groups = "Validation of Date picker")
 public void Jira_1205() throws Exception{
 	
@@ -240,7 +244,18 @@ public void Jira_1205() throws Exception{
     }
 }*/
 
-@Test (priority = 7, groups = "Form Submission")
+//@Test (priority = 7, groups = "Form Submission", dependsOnMethods = "Jira")
+/* PS: This particular test case works fine in isolation, but when we try to run it along with other test cases, it fails out.
+ * Below errors encountered:
+ * org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@type= 'text' and @class= 'form-control' and @id= 'first-name' and @placeholder= 'Enter first name']"}
+ * 
+ * Sometimes it says:org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+ *  
+ *  So the test seems to be very flaky in nature.
+ *  
+ *  Action Item: 1. RCA*/
+
+/*@Test (priority = 7, groups = "Form Submission")
 public void JiraId_1206() throws Exception {
 
 	ExcelUtils.setExcelFile (sPath, 0);
@@ -284,12 +299,33 @@ public void JiraId_1206() throws Exception {
         ExcelUtils.updateResultPass (iRow, 5, sPath);
 	}
 	}
-    }
+    }*/
 
+@Test (priority = 8, groups = "Web based pop-ups")
+public void JiraId_1207() throws Exception {
+	
+	ExcelUtils.setExcelFile(sPath, 0);
+	launchURL();
+	WebBasedPopUp webPopUp = PageFactory.initElements(driver, WebBasedPopUp.class);
+	for (int iRow = 19; iRow <= 21; iRow++ ) {
+		String sActionKeyword = ExcelUtils.getCellData (iRow, 4);
+		if (sActionKeyword.equals ("clickSwitchWindow")) {
+			webPopUp.clickSwitchWindow();
+			ExcelUtils.updateResultPass (iRow, 5, sPath);
+			}
+		else if (sActionKeyword.equals("clickOpenAlert")) {
+			webPopUp.clickOpenAlert();
+			ExcelUtils.updateResultPass (iRow, 5, sPath);
+		}
+		else if (sActionKeyword.equals("closeSimpleAlert")) {
+			webPopUp.closeSimpleAlert();
+			ExcelUtils.updateResultPass (iRow, 5, sPath);
+		}		
+	}
+}
 
 @AfterTest
 public void closeTheSession() throws Throwable {
-   Thread.sleep(10000);
    driver.quit();
 }
 

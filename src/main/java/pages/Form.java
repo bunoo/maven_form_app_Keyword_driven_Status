@@ -10,12 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Form {
+public class Form extends HomePage {
 
-	WebDriver driver;
-	WebDriverWait wait;
-	Actions actions;
-	
 	/*Parameterized Constructor*/	
 	public Form (WebDriver driver) {
         this.driver = driver;
@@ -24,8 +20,8 @@ public class Form {
         PageFactory.initElements(driver,this);
     }
 	
-	/* Define web elements using @FindBy annotation as WebElement */
-	@FindBy (xpath = "//a[@class='btn btn-lg' and @href='/form']") WebElement Form;
+	/* Define web elements using @FindBy annotation */
+	//@FindBy (xpath = "//a[@class='btn btn-lg' and @href='/form']") WebElement Form;
 	@FindBy (xpath = "//input[@type= 'text' and @class= 'form-control' and @id= 'first-name' and @placeholder= 'Enter first name']") WebElement fName;
 	@FindBy (id="last-name") WebElement lName;
 	@FindBy (id="job-title") WebElement jobTitle;
@@ -115,6 +111,6 @@ public void submit_Form (String FName, String LName, String JobTitle, String Edu
 		//Click on Submit button
 		submit_btn.click();
 		
-	} //---WORKING FINE
+	}
 
 }

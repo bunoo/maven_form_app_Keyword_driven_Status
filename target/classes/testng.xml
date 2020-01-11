@@ -4,9 +4,13 @@
 <test name = "diff features of testng">
 
 <classes>
-
-<class name = "executionEngine.DriverScript" />
-
+<class name = "test.DriverScript">
+			<methods>
+					<exclude name= "JiraId_1205"/>
+					
+			</methods>
+		</class>
+      
 </classes>
 </test>
 </suite>

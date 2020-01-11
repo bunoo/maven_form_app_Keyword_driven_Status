@@ -13,11 +13,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DatePickerValidation {
+public class DatePickerValidation extends HomePage {
 
-	WebDriver driver;
-	WebDriverWait wait;
-	
 	/*Parameterized Constructor*/	
 	public DatePickerValidation (WebDriver driver) {
         this.driver = driver;

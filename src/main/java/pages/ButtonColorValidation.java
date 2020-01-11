@@ -9,11 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class ButtonColorValidation {
+public class ButtonColorValidation extends HomePage {
 
-	WebDriver driver;
-	WebDriverWait wait;
-	
 	/*Parameterized Constructor*/	
 	public ButtonColorValidation (WebDriver driver) {
         this.driver = driver;
