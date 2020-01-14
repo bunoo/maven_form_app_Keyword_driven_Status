@@ -24,4 +24,10 @@ public class HomePage{
 		wait.until(ExpectedConditions.visibilityOf(switchWindow)).click();
 	}
 	
+	/*The below piece of code is written to test the <<export of this project to another project>>.
+	 * Essentially I have made this project a <<Library Project>> or we can say <<core/master>> project*/
+    public void testExport() {
+		System.out.println("hi");
+	}
+	
 }
