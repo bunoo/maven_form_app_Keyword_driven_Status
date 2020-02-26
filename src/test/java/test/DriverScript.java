@@ -45,10 +45,8 @@ public void pre_requisute() {
 	
 	 driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS); //Dynamic wait
 }
-//Q - HOW CAN I ENSURE THAT MY APPROACH IS GENERALISED IN CASE WHEREIN I NEED TO RUN A SELECTED NO. OF TEST CASES 
-//ANS - SIMPLY COMMENT OUT THOSE TEST CASES.
 
-/*@Test (priority = 1,groups = "Validation of title")
+@Test (priority = 1,groups = "Validation of title")
 public void Jira() throws Exception {
 	
 	ExcelUtils.setExcelFile (sPath, 0);
@@ -63,11 +61,11 @@ public void Jira() throws Exception {
 		 ExcelUtils.updateResultPass (iRow, 5, sPath);}
 			
 		}
-}*/
+}
 
 	
-//@Test (priority = 2, groups = "Validation of hyperlink", dependsOnMethods = "Jira")
-/*@Test (priority = 2, groups = "Validation of hyperlink")
+@Test (priority = 2, groups = "Validation of hyperlink", dependsOnMethods = "Jira")
+//@Test (priority = 2, groups = "Validation of hyperlink")
 public void JiraId_1200() throws Exception {
 		
 			    ExcelUtils.setExcelFile (sPath, 0);
@@ -94,7 +92,7 @@ public void JiraId_1200() throws Exception {
 					    	 ExcelUtils.updateResultFail (iRow, 5, sPath);}}
 				 
 		}			
-}*/
+}
 
  
 //@Test (priority = 3, groups = "Validation of hyperlink", dependsOnMethods = "Jira")
@@ -301,7 +299,7 @@ public void JiraId_1206() throws Exception {
 	}
     }*/
 
-@Test (priority = 8, groups = "Web based pop-ups")
+/*@Test (priority = 8, groups = "Web based pop-ups")
 public void JiraId_1207() throws Exception {
 	
 	ExcelUtils.setExcelFile(sPath, 0);
@@ -322,7 +320,7 @@ public void JiraId_1207() throws Exception {
 			ExcelUtils.updateResultPass (iRow, 5, sPath);
 		}		
 	}
-}
+}*/
 
 @AfterTest
 public void closeTheSession() throws Throwable {
