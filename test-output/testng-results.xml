@@ -1,31 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="26482" started-at="2020-02-26T13:13:28 IST" finished-at="2020-02-26T13:13:54 IST">
+  <suite name="Default suite" duration-ms="92993" started-at="2020-02-27T17:19:27 IST" finished-at="2020-02-27T17:21:00 IST">
     <groups>
+      <group name="Web based pop-ups">
+        <method signature="DriverScript.JiraId_1207()[pri:8, instance:test.DriverScript@3224f60b]" name="JiraId_1207" class="test.DriverScript"/>
+      </group> <!-- Web based pop-ups -->
+      <group name="Validation of color">
+        <method signature="DriverScript.JiraId_1202()[pri:4, instance:test.DriverScript@3224f60b]" name="JiraId_1202" class="test.DriverScript"/>
+      </group> <!-- Validation of color -->
+      <group name="Validation of checkbox">
+        <method signature="DriverScript.Jira_1203()[pri:5, instance:test.DriverScript@3224f60b]" name="Jira_1203" class="test.DriverScript"/>
+      </group> <!-- Validation of checkbox -->
       <group name="Validation of title">
-        <method signature="DriverScript.Jira()[pri:1, instance:test.DriverScript@57855c9a]" name="Jira" class="test.DriverScript"/>
+        <method signature="DriverScript.Jira()[pri:1, instance:test.DriverScript@3224f60b]" name="Jira" class="test.DriverScript"/>
       </group> <!-- Validation of title -->
+      <group name="Validation of Right Click ops">
+        <method signature="DriverScript.Jira_1204()[pri:8, instance:test.DriverScript@3224f60b]" name="Jira_1204" class="test.DriverScript"/>
+      </group> <!-- Validation of Right Click ops -->
+      <group name="Validation of Date picker">
+        <method signature="DriverScript.Jira_1205()[pri:6, instance:test.DriverScript@3224f60b]" name="Jira_1205" class="test.DriverScript"/>
+      </group> <!-- Validation of Date picker -->
       <group name="Validation of hyperlink">
-        <method signature="DriverScript.JiraId_1200()[pri:2, instance:test.DriverScript@57855c9a]" name="JiraId_1200" class="test.DriverScript"/>
+        <method signature="DriverScript.JiraId_1200()[pri:2, instance:test.DriverScript@3224f60b]" name="JiraId_1200" class="test.DriverScript"/>
+        <method signature="DriverScript.JiraId_1201()[pri:3, instance:test.DriverScript@3224f60b]" name="JiraId_1201" class="test.DriverScript"/>
       </group> <!-- Validation of hyperlink -->
     </groups>
-    <test name="Default test" duration-ms="26482" started-at="2020-02-26T13:13:28 IST" finished-at="2020-02-26T13:13:54 IST">
+    <test name="Default test" duration-ms="92993" started-at="2020-02-27T17:19:27 IST" finished-at="2020-02-27T17:21:00 IST">
       <class name="test.DriverScript">
-        <test-method status="PASS" signature="pre_requisute()[pri:0, instance:test.DriverScript@57855c9a]" name="pre_requisute" is-config="true" duration-ms="13439" started-at="2020-02-26T13:13:28 IST" finished-at="2020-02-26T13:13:41 IST">
+        <test-method status="PASS" signature="pre_requisute()[pri:0, instance:test.DriverScript@3224f60b]" name="pre_requisute" is-config="true" duration-ms="15522" started-at="2020-02-27T17:19:27 IST" finished-at="2020-02-27T17:19:43 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pre_requisute -->
-        <test-method status="PASS" signature="Jira()[pri:1, instance:test.DriverScript@57855c9a]" name="Jira" duration-ms="6409" started-at="2020-02-26T13:13:41 IST" finished-at="2020-02-26T13:13:48 IST">
+        <test-method status="PASS" signature="Jira()[pri:1, instance:test.DriverScript@3224f60b]" name="Jira" duration-ms="15395" started-at="2020-02-27T17:19:43 IST" finished-at="2020-02-27T17:19:58 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Jira -->
-        <test-method status="PASS" signature="JiraId_1200()[pri:2, instance:test.DriverScript@57855c9a]" name="JiraId_1200" duration-ms="4948" started-at="2020-02-26T13:13:48 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-02-26T13:13:53 IST">
+        <test-method status="PASS" signature="JiraId_1200()[pri:2, instance:test.DriverScript@3224f60b]" name="JiraId_1200" duration-ms="7116" started-at="2020-02-27T17:19:58 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-02-27T17:20:05 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- JiraId_1200 -->
-        <test-method status="PASS" signature="closeTheSession()[pri:0, instance:test.DriverScript@57855c9a]" name="closeTheSession" is-config="true" duration-ms="1558" started-at="2020-02-26T13:13:53 IST" finished-at="2020-02-26T13:13:54 IST">
+        <test-method status="PASS" signature="JiraId_1201()[pri:3, instance:test.DriverScript@3224f60b]" name="JiraId_1201" duration-ms="40437" started-at="2020-02-27T17:20:05 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-02-27T17:20:46 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- JiraId_1201 -->
+        <test-method status="PASS" signature="JiraId_1202()[pri:4, instance:test.DriverScript@3224f60b]" name="JiraId_1202" duration-ms="2513" started-at="2020-02-27T17:20:46 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-02-27T17:20:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- JiraId_1202 -->
+        <test-method status="PASS" signature="Jira_1203()[pri:5, instance:test.DriverScript@3224f60b]" name="Jira_1203" duration-ms="3770" started-at="2020-02-27T17:20:48 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-02-27T17:20:52 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Jira_1203 -->
+        <test-method status="PASS" signature="Jira_1205()[pri:6, instance:test.DriverScript@3224f60b]" name="Jira_1205" duration-ms="2861" started-at="2020-02-27T17:20:52 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-02-27T17:20:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Jira_1205 -->
+        <test-method status="PASS" signature="JiraId_1207()[pri:8, instance:test.DriverScript@3224f60b]" name="JiraId_1207" duration-ms="2395" started-at="2020-02-27T17:20:55 IST" finished-at="2020-02-27T17:20:57 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- JiraId_1207 -->
+        <test-method status="PASS" signature="Jira_1204()[pri:8, instance:test.DriverScript@3224f60b]" name="Jira_1204" duration-ms="1871" started-at="2020-02-27T17:20:57 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-02-27T17:20:59 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Jira_1204 -->
+        <test-method status="PASS" signature="closeTheSession()[pri:0, instance:test.DriverScript@3224f60b]" name="closeTheSession" is-config="true" duration-ms="848" started-at="2020-02-27T17:20:59 IST" finished-at="2020-02-27T17:21:00 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeTheSession -->

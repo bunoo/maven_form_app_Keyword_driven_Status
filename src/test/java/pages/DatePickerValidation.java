@@ -13,30 +13,41 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DatePickerValidation extends HomePage {
+/*public class DatePickerValidation extends HomePage {
 
-	/*Parameterized Constructor*/	
+	WebDriver driver;
+	WebDriverWait wait;
+	Actions actions;
+	
+	Parameterized Constructor	
 	public DatePickerValidation (WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 5);
         PageFactory.initElements(driver,this);
-    }
+    }*/
 
+  public class DatePickerValidation {
+
+	WebDriver driver;
+	WebDriverWait wait;
+	Actions actions;
+	
+	/*Parameterized Constructor*/	
+	public DatePickerValidation (WebDriver driver) {
+		 this.driver = driver;
+	        wait = new WebDriverWait(driver, 5);
+	        actions = new Actions (driver);
+	        PageFactory.initElements(driver,this);
+	}
+        
 	/* Define web elements using @FindBy annotation as WebElement. */
 	/* ACTION ITEM - Later on implement @CacheLookup annotations*/
-	@FindBy (how = How.ID, using = "navbarDropdownMenuLink") @CacheLookup WebElement Components;
-	@FindBy (how = How.XPATH, using = "//a[@class = \"dropdown-item\" and @href=\"/datepicker\"]") @CacheLookup WebElement datePicker;
+	
 	@FindBy (xpath = "//input[@type='text' and @class='form-control' and @id='datepicker']") @CacheLookup WebElement dateFieldText;
 	
 	
 	/*Below are the implementations*/
-	public void click_DatePicker() {
-		
-		Components.click();
-		datePicker.click();
-		}
-	
-	public void click_DatePicker_text_field() {
+    public void click_DatePicker_text_field() {
 		
 		wait.until(ExpectedConditions.visibilityOf(dateFieldText));
 		dateFieldText.click();

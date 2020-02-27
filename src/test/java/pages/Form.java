@@ -6,12 +6,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Form extends HomePage {
+public class Form{
 
+	WebDriver driver;
+	WebDriverWait wait;
+	Actions actions;
+	
 	/*Parameterized Constructor*/	
 	public Form (WebDriver driver) {
         this.driver = driver;
@@ -21,8 +26,10 @@ public class Form extends HomePage {
     }
 	
 	/* Define web elements using @FindBy annotation */
-	//@FindBy (xpath = "//a[@class='btn btn-lg' and @href='/form']") WebElement Form;
-	@FindBy (xpath = "//input[@type= 'text' and @class= 'form-control' and @id= 'first-name' and @placeholder= 'Enter first name']") WebElement fName;
+	/* The webelement <firstname> is not working consistently with xpath. Let us try with CssSelector*/
+	//@FindBy (xpath = "//*[@type = 'text' and @class= 'form-control' and @id= 'first-name' and @placeholder= 'Enter first name']") WebElement fName;
+	@FindBy (how = How.CSS, using = "input.id#first-name[placeholder= 'Enter first name']") WebElement fName;
+	//@FindBy (how = How.CSS, using = "button#dropdownMenuButton") @CacheLookup WebElement drop_down_btn
 	@FindBy (id="last-name") WebElement lName;
 	@FindBy (id="job-title") WebElement jobTitle;
 	
@@ -35,12 +42,8 @@ public class Form extends HomePage {
 	@FindBy (xpath = "//select [@class='form-control' and @id = 'select-menu']") WebElement UserExp;
 	@FindBy (xpath = "//input[@type='text' and @class='form-control' and @id='datepicker' and @data-provide='datepicker' and @placeholder='mm/dd/yyyy' and @data-date-autoclose='true' and @data-date-today-highlight='true']") WebElement date;
 	@FindBy (xpath = "//a[@class='btn btn-lg btn-primary' and @role='button' and @href='/thanks']") WebElement submit_btn;
-	/*Below are the implementations*/
-	public void click_Form() {
-		
-		wait.until(ExpectedConditions.visibilityOf(Form)).click();
-	}
 	
+	/*Below are the implementations*/
 	/* public void submit_Form (String EduLevel){
         
         if (EduLevel == "hs") {

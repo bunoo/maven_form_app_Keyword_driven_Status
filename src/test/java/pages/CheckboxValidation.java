@@ -3,35 +3,46 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class CheckboxValidation extends HomePage {
+/*public class CheckboxValidation extends HomePage {
 
+	WebDriver driver;
+	WebDriverWait wait;
+	Actions actions;
 	
-	/*Parameterized Constructor*/	
-	public CheckboxValidation (WebDriver driver) {
+	Parameterized Constructor	
+	public CheckboxValidation (WebDriver driver) {//Error: Implicit super constructor HomePage() is undefined. Must explicitly invoke another constructor
         this.driver = driver;
         wait = new WebDriverWait(driver, 5);
         PageFactory.initElements(driver,this);
-    }
+    }*/
 	
+public class CheckboxValidation {
+
+	WebDriver driver;
+	WebDriverWait wait;
+	Actions actions;
+	
+	/*Parameterized Constructor*/	
+	public CheckboxValidation (WebDriver driver) {
+		 this.driver = driver;
+	        wait = new WebDriverWait(driver, 5);
+	        actions = new Actions (driver);
+	        PageFactory.initElements(driver,this);
+    }
 	/* Define web elements using @FindBy annotation as WebElement */
-	@FindBy(xpath = "//a[@class='btn btn-lg' and @href='/checkbox']") WebElement checkbox;
 	@FindBy (xpath = "//input[@type='checkbox' and @id='checkbox-1' and @aria-label='checkbox' and @value='checkbox-1']") WebElement chkbox1;
 	@FindBy (id = "checkbox-2") WebElement chkbox2;
 	@FindBy (id = "checkbox-3") WebElement chkbox3;
 	
 	
 	/*Below are the implementations*/
-	public void click_Checkbox() {
-		    
-		 wait.until(ExpectedConditions.visibilityOf(checkbox)).click();
-	}
-	
 	public void validate_display_text_Checkboxes () {
 		   
 		   boolean act_contain_chkboxes = driver.getPageSource().contains("Checkboxes");

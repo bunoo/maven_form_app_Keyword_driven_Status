@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -11,26 +12,38 @@ import org.testng.Assert;
 import org.testng.*;
 
 
-public class ButtonColorValidation extends HomePage {
+/*public class ButtonColorValidation extends HomePage {
 
-	/*Parameterized Constructor*/	
-	public ButtonColorValidation (WebDriver driver) {
+	WebDriver driver;
+	WebDriverWait wait;
+	Actions actions;
+	
+	Parameterized Constructor	
+	public ButtonColorValidation (WebDriver driver) { //Error: // Error: Implicit super constructor HomePage() is undefined. Must explicitly invoke another constructor
         this.driver = driver;
         wait = new WebDriverWait(driver, 5);
         PageFactory.initElements(driver,this);
-    }
+    }*/
 	
+ public class ButtonColorValidation{
 	
+	 WebDriver driver;
+	 WebDriverWait wait;
+	 Actions actions;
+	
+	 public ButtonColorValidation (WebDriver driver) {
+	        this.driver = driver;
+	        wait = new WebDriverWait(driver, 5);
+	        PageFactory.initElements(driver,this);
+	    }
+	 
 	/* Define web elements using @FindBy annotation as WebElement */
-	@FindBy(xpath = "//a[@class='btn btn-lg' and @href='/buttons']") @CacheLookup WebElement btn;
+	
 	@FindBy(xpath = "//button[@type='button' and @class='btn btn-lg btn-primary']") @CacheLookup WebElement prButton;
 	@FindBy(xpath = "//button[@type='button' and @class='btn btn-lg btn-primary']") @CacheLookup WebElement PRIMARYbtnColor;
 	
 	
 	/*Below are the implementations*/
-	public void click_Button() {
-		  wait.until(ExpectedConditions.visibilityOf(btn)).click();
-	 }
 	
 	   public void validate_buttonColor()   {
 		   

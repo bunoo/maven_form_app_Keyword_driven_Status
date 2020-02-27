@@ -9,12 +9,16 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class WebBasedPopUp extends HomePage {
+public class WebBasedPopUp{
 
+	WebDriver driver;
+	WebDriverWait wait;
+	Actions actions;
+	
 	/*Parameterized Constructor*/	
 	public WebBasedPopUp (WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, 5);
         actions = new Actions (driver);
         PageFactory.initElements(driver,this);
     }

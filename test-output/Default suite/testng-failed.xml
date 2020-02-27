@@ -7,7 +7,7 @@
         <methods>
           <include name="closeTheSession"/>
           <include name="pre_requisute"/>
-          <include name="JiraId_1207"/>
+          <include name="JiraId_1206"/>
         </methods>
       </class> <!-- test.DriverScript -->
     </classes>
