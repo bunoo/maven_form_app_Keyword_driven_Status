@@ -30,31 +30,46 @@ public class HomePage{
 	/* Define all the web elements present on the HomePage using @FindBy annotation */
 	/*---- I have used How class as well. It helps us in defining Css value  ---- */
 	/*---- Use @CacheLookup. It enhances the performance in the long run.  ----*/
+	/*Following are the WebElement definitions on the HTML page of the home page*/
 	
+	
+	//<a class="btn btn-lg" href="/buttons">Buttons</a>
 	//@FindBy(xpath = "//a[@class='btn btn-lg' and @href='/buttons']") @CacheLookup WebElement btn;
 	@FindBy(how = How.CSS, using = "a.btn.btn-lg[href='/buttons']") @CacheLookup WebElement btn;
 	
+	//<a class="btn btn-lg" href="/form">Complete Web Form</a>
 	//@FindBy (xpath = "//a[@class='btn btn-lg' and @href='/form']") WebElement Form;
 	@FindBy (how = How.CSS, using = "a.btn.btn-lg[href='/form']") @CacheLookup WebElement Form;
 	
+	//<a class="btn btn-lg" href="/switch-window">Switch Window</a>
 	//@FindBy (xpath = "//a[@class= 'btn btn-lg' and @href = '/switch-window']") WebElement switchWindow;
 	@FindBy (how = How.CSS, using = "a.btn.btn-lg[href='/switch-window']") @CacheLookup WebElement switchWindow;
 	
+	//<a class="dropdown-item" href="/dropdown">Dropdown</a>
 	//@FindBy(xpath = "//a[@class='dropdown-item' and @href='/dropdown']") @CacheLookup WebElement dropdown;
 	@FindBy(how = How.CSS, using = "a.dropdown-item[href='/dropdown']") @CacheLookup WebElement dropdown;
 	
+	/* <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button> */
 	//@FindBy (how = How.CSS, using = "button#dropdownMenuButton") @CacheLookup WebElement drop_down_btn;
 	@FindBy (how = How.CSS, using = "button.btn.btn-primary.dropdown-toggle[data-toggle='dropdown']") @CacheLookup WebElement drop_down_btn;
 	
+	//<a class="btn btn-lg" href="/checkbox">Checkbox</a>
     //@FindBy(xpath = "//a[@class='btn btn-lg' and @href='/checkbox']") WebElement checkbox;
     @FindBy(how = How.CSS, using = "a.btn.btn-lg[href='/checkbox']") WebElement checkbox;
     
+    //<a class="btn btn-lg" href="/autocomplete">Autocomplete</a>
     //@FindBy (how = How.XPATH, using = "//a[@class='btn btn-lg' and @href='/autocomplete']") @CacheLookup WebElement btnAutocomplete;
 	@FindBy (how = How.CSS, using = "a.btn.btn-lg[href='/autocomplete']") @CacheLookup WebElement btnAutocomplete;
 	
+	//<a class="dropdown-item" href="/datepicker">Datepicker</a>
     //@FindBy (how = How.XPATH, using = "//a[@class = \"dropdown-item\" and @href=\"/datepicker\"]") @CacheLookup WebElement datePicker;
 	@FindBy (how = How.CSS, using = "a.dropdown-item[href='/datepicker']") @CacheLookup WebElement datePicker;
 	
+	/* <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Components
+        </a> */
 	//@FindBy (how = How.ID, using = "navbarDropdownMenuLink") @CacheLookup WebElement Components;
     @FindBy (how = How.CSS, using = "a#navbarDropdownMenuLink[data-toggle = 'dropdown']") @CacheLookup WebElement Components;
 	

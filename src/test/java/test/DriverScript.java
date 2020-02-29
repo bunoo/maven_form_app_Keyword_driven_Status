@@ -24,7 +24,7 @@ public class DriverScript {
 	WebDriver driver;
     String sPath = "D:\\INTERVIEW\\SELENIUM\\Test_Data\\DataEngine2.xlsx";
     WebDriverWait wait;
-
+    
 public void launchURL() {
 		   
 		driver.get("http://formy-project.herokuapp.com/");
@@ -45,6 +45,7 @@ public void pre_requisute() {
 	 //driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	
 	 driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS); //Dynamic wait
+	 
 }
 
 @Test (priority = 1,groups = "Validation of title")
@@ -70,6 +71,7 @@ public void JiraId_1200() throws Exception { //Validation of "DropDownMenu" func
 		
 			    ExcelUtils.setExcelFile (sPath, 0);
 			    launchURL();
+			    
 			    HomePage hp = PageFactory.initElements(driver, HomePage.class);
 			    
 				for (int iRow = 2; iRow<=3; iRow++){
