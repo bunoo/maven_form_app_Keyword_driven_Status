@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
+
+import pages.AutoComplete;
 import pages.ButtonColorValidation;
 import pages.CheckboxValidation;
 import pages.DatePickerValidation;
@@ -62,7 +64,6 @@ public void Jira() throws Exception {
 		}
 }
 
-	
 @Test (priority = 2, groups = "Validation of hyperlink", dependsOnMethods = "Jira")
 //@Test (priority = 2, groups = "Validation of hyperlink")
 public void JiraId_1200() throws Exception { //Validation of "DropDownMenu" functionality
@@ -93,7 +94,6 @@ public void JiraId_1200() throws Exception { //Validation of "DropDownMenu" func
 		}			
 }
 
- 
 @Test (priority = 3, groups = "Validation of hyperlink", dependsOnMethods = "Jira")
 //@Test (priority = 3, groups = "Validation of hyperlink")
 public void JiraId_1201() throws Exception { 
@@ -102,6 +102,7 @@ public void JiraId_1201() throws Exception {
 		     launchURL();
 		     		     
 		     HomePage hp = PageFactory.initElements(driver, HomePage.class);
+		     AutoComplete ac = PageFactory.initElements(driver, AutoComplete.class);
 		     
 		     for (int iRow = 4; iRow<=5; iRow++){
 			    
@@ -117,7 +118,7 @@ public void JiraId_1201() throws Exception {
                 		   String tab1 = ExcelUtils.getCellData (jRow, 0);
                 		   
                 		   String zip_code_exp = ExcelUtils.getCellData(jRow, 3); // For -ve testing, you can change some value.  
-                		   hp.validate_autoComplete(tab1, zip_code_exp);
+                		   ac.validate_autoComplete(tab1, zip_code_exp);
                 	   }
                 	   
                 	   ExcelUtils.setExcelFile (sPath, 0); 
@@ -126,8 +127,6 @@ public void JiraId_1201() throws Exception {
 		               
 }
 }
-
-
 
 @Test (priority = 4, groups = "Validation of color", dependsOnMethods = "Jira") 
 //@Test (priority = 4, groups = "Validation of color")

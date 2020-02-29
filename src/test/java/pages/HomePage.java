@@ -55,12 +55,6 @@ public class HomePage{
     //@FindBy (how = How.XPATH, using = "//a[@class = \"dropdown-item\" and @href=\"/datepicker\"]") @CacheLookup WebElement datePicker;
 	@FindBy (how = How.CSS, using = "a.dropdown-item[href='/datepicker']") @CacheLookup WebElement datePicker;
 	
-	//@FindBy (xpath = "//input[@type = 'text' and @class= 'form-control' and @id= 'postal_code' and @placeholder='Zip code']") WebElement zip_code;
-	@FindBy (how = How.CSS, using = "input#postal_code[placeholder='Zip code']") @CacheLookup WebElement zip_code;
-	
-    //@FindBy (id = "autocomplete") @CacheLookup WebElement Address;
-	@FindBy (how = How.CSS, using = "input.form-control[placeholder = 'Enter address']") @CacheLookup WebElement Address;
-	
 	//@FindBy (how = How.ID, using = "navbarDropdownMenuLink") @CacheLookup WebElement Components;
     @FindBy (how = How.CSS, using = "a#navbarDropdownMenuLink[data-toggle = 'dropdown']") @CacheLookup WebElement Components;
 	
@@ -122,19 +116,4 @@ public class HomePage{
 		
 		wait.until(ExpectedConditions.visibilityOf(Form)).click();
 	}
-	
-	public void validate_autoComplete(String address_text, String zipCode) throws Exception {
-		 
-		       wait.until(ExpectedConditions.visibilityOf(Address)).click();
-			   Address.clear();
-			   Address.sendKeys(address_text);
-			   Thread.sleep(4000); /* Explore a way to implement Explicit wait to validate the appearance of Suggestion Box */
-			   
-			   actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.RETURN).build().perform();
-			   Thread.sleep(4000);
-
-               String zip_code_act = zip_code.getAttribute("value").concat("a");
-			   Assert.assertEquals(zip_code_act, zipCode, "the wrong value is rendered");
-		      
-}
 }
