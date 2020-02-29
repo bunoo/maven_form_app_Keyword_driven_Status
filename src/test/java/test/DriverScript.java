@@ -1,5 +1,7 @@
 package test;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,6 +11,7 @@ import org.testng.annotations.*;
 import pages.ButtonColorValidation;
 import pages.CheckboxValidation;
 import pages.DatePickerValidation;
+import pages.Form;
 import pages.HomePage;
 import pages.TitleValidation;
 import pages.WebBasedPopUp;
@@ -93,12 +96,13 @@ public void JiraId_1200() throws Exception { //Validation of "DropDownMenu" func
  
 @Test (priority = 3, groups = "Validation of hyperlink", dependsOnMethods = "Jira")
 //@Test (priority = 3, groups = "Validation of hyperlink")
-public void JiraId_1201() throws Exception {
+public void JiraId_1201() throws Exception { 
 	
 	 		 ExcelUtils.setExcelFile (sPath, 0);
 		     launchURL();
 		     		     
 		     HomePage hp = PageFactory.initElements(driver, HomePage.class);
+		     
 		     for (int iRow = 4; iRow<=5; iRow++){
 			    
 				String sActionKeyword = ExcelUtils.getCellData (iRow, 4);
@@ -249,7 +253,7 @@ public void Jira_1205() throws Exception{
  *  Action Item: 1. RCA
  *  Workaround: For now, I have removed the tag <input> and replaced with <*>. It works fine*/
 
-/*@Test (priority = 7, groups = "Form Submission")
+@Test (priority = 7, groups = "Form Submission")
 public void JiraId_1206() throws Exception {
 
 	ExcelUtils.setExcelFile (sPath, 0);
@@ -295,10 +299,10 @@ public void JiraId_1206() throws Exception {
         ExcelUtils.updateResultPass (iRow, 5, sPath);
 	}
 	}
-    }*/
+    }
 
-//@Test (priority = 8, groups = "Web based pop-ups", dependsOnMethods = "Jira")
-@Test (priority = 8, groups = "Web based pop-ups")
+@Test (priority = 8, groups = "Web based pop-ups", dependsOnMethods = "Jira")
+//@Test (priority = 8, groups = "Web based pop-ups")
 public void JiraId_1207() throws Exception {
 	
 	ExcelUtils.setExcelFile(sPath, 0);

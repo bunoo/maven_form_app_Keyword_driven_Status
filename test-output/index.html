@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Abha Kumari\AppData\Local\Temp\testng-eclipse-210529839\testng-customsuite.xml</span>
+                    <span>C:\Users\Abha Kumari\AppData\Local\Temp\testng-eclipse-1906152720\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -59,7 +59,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="group-Default_suite">
-                    <span>7 groups</span>
+                    <span>8 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">8 methods,   8 passed</span>
+                    <span class="method-stats">9 methods, 1 failed,   8 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="test.DriverScript" hash-for-method="JiraId_1206">JiraId_1206</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -152,6 +166,83 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">test.DriverScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="JiraId_1206">
+                  </a> <!-- JiraId_1206 -->
+                  <span class="method-name">JiraId_1206</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;input.id#first-name[placeholder= &apos;Enter first name&apos;]&quot;}
+  (Session info: chrome=79.0.3945.130)
+  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 10.0.18362 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-8SKO70U&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_181&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\ABHAKU~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57306}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 79.0.3945.130, webStorageEnabled: true}
+Session ID: 974dddb39f53897b4a1b7e4104843a03
+*** Element info: {Using=css selector, value=input.id#first-name[placeholder= &apos;Enter first name&apos;]}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy10.clear(Unknown Source)
+	at pages.Form.submit_Form(Form.java:66)
+	at test.DriverScript.JiraId_1206(DriverScript.java:294)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+	at org.testng.TestNG.runSuites(TestNG.java:1032)
+	at org.testng.TestNG.run(TestNG.java:1000)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -219,7 +310,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Abha Kumari\AppData\Local\Temp\testng-eclipse-210529839\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Abha Kumari\AppData\Local\Temp\testng-eclipse-1906152720\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -252,6 +343,14 @@
             <span class="header-content">Groups for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">Form Submission</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">JiraId_1206</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
             <div class="test-group">
               <span class="test-group-name">Validation of Date picker</span>
               <br/>
@@ -328,39 +427,43 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(8);
+data.addRows(9);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'JiraId_1201')
 data.setCell(0, 2, 'test.DriverScript')
-data.setCell(0, 3, 39954);
+data.setCell(0, 3, 38240);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'Jira')
 data.setCell(1, 2, 'test.DriverScript')
-data.setCell(1, 3, 9827);
+data.setCell(1, 3, 14723);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'JiraId_1200')
 data.setCell(2, 2, 'test.DriverScript')
-data.setCell(2, 3, 3177);
+data.setCell(2, 3, 3450);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'JiraId_1202')
+data.setCell(3, 1, 'Jira_1203')
 data.setCell(3, 2, 'test.DriverScript')
-data.setCell(3, 3, 2931);
+data.setCell(3, 3, 2938);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'Jira_1203')
+data.setCell(4, 1, 'Jira_1205')
 data.setCell(4, 2, 'test.DriverScript')
-data.setCell(4, 3, 2782);
+data.setCell(4, 3, 2646);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'JiraId_1207')
 data.setCell(5, 2, 'test.DriverScript')
-data.setCell(5, 3, 2340);
+data.setCell(5, 3, 2548);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'Jira_1205')
+data.setCell(6, 1, 'JiraId_1202')
 data.setCell(6, 2, 'test.DriverScript')
-data.setCell(6, 3, 2135);
+data.setCell(6, 3, 2490);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'Jira_1204')
+data.setCell(7, 1, 'JiraId_1206')
 data.setCell(7, 2, 'test.DriverScript')
-data.setCell(7, 3, 1188);
+data.setCell(7, 3, 1468);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'Jira_1204')
+data.setCell(8, 2, 'test.DriverScript')
+data.setCell(8, 3, 1014);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -398,39 +501,45 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">Jira</span>
-                <span class="method-start">14883 ms</span>
+                <span class="method-start">15584 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">JiraId_1200</span>
-                <span class="method-start">24735 ms</span>
+                <span class="method-start">30347 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">JiraId_1201</span>
-                <span class="method-start">27918 ms</span>
+                <span class="method-start">33805 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">JiraId_1202</span>
-                <span class="method-start">67881 ms</span>
+                <span class="method-start">72054 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">Jira_1203</span>
-                <span class="method-start">70823 ms</span>
+                <span class="method-start">74551 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">Jira_1205</span>
-                <span class="method-start">73612 ms</span>
+                <span class="method-start">77505 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">JiraId_1206</span>
+                <span class="method-start">80162 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">JiraId_1207</span>
-                <span class="method-start">75760 ms</span>
+                <span class="method-start">81697 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">Jira_1204</span>
-                <span class="method-start">78111 ms</span>
+                <span class="method-start">84260 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">closeTheSession</span>
-                <span class="method-start">79309 ms</span>
+                <span class="method-start">85294 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

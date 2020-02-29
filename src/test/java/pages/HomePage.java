@@ -28,22 +28,43 @@ public class HomePage{
     }
 	
 	/* Define all the web elements present on the HomePage using @FindBy annotation */
-	/*---- I have used How class as well  ---- */
+	/*---- I have used How class as well. It helps us in defining Css value  ---- */
 	/*---- Use @CacheLookup. It enhances the performance in the long run.  ----*/
 	
-	@FindBy(xpath = "//a[@class='btn btn-lg' and @href='/buttons']") @CacheLookup WebElement btn;
-	@FindBy (xpath = "//a[@class='btn btn-lg' and @href='/form']") WebElement Form;
-	@FindBy (xpath = "//a[@class= 'btn btn-lg' and @href = '/switch-window']") WebElement switchWindow;
-	@FindBy(xpath = "//a[@class='dropdown-item' and @href='/dropdown']") @CacheLookup WebElement dropdown;
-	@FindBy (id = "autocomplete") @CacheLookup WebElement Address;
-	@FindBy (how = How.ID, using = "navbarDropdownMenuLink") @CacheLookup WebElement Components;
-	@FindBy (how = How.XPATH, using = "//a[@class = \"dropdown-item\" and @href=\"/datepicker\"]") @CacheLookup WebElement datePicker;
-	@FindBy (how = How.XPATH, using = "//a[@class='btn btn-lg' and @href='/autocomplete']") @CacheLookup WebElement btnAutocomplete;
-	//@FindBy (how = How.CSS, using = "button#dropdownMenuButton") @CacheLookup WebElement drop_down_btn;
-	@FindBy (css = "button#dropdownMenuButton") WebElement drop_down_btn;
-	@FindBy (xpath = "//input[@type = 'text' and @class= 'form-control' and @id= 'postal_code' and @placeholder='Zip code']") WebElement zip_code;
-	@FindBy(xpath = "//a[@class='btn btn-lg' and @href='/checkbox']") WebElement checkbox;
+	//@FindBy(xpath = "//a[@class='btn btn-lg' and @href='/buttons']") @CacheLookup WebElement btn;
+	@FindBy(how = How.CSS, using = "a.btn.btn-lg[href='/buttons']") @CacheLookup WebElement btn;
 	
+	//@FindBy (xpath = "//a[@class='btn btn-lg' and @href='/form']") WebElement Form;
+	@FindBy (how = How.CSS, using = "a.btn.btn-lg[href='/form']") @CacheLookup WebElement Form;
+	
+	//@FindBy (xpath = "//a[@class= 'btn btn-lg' and @href = '/switch-window']") WebElement switchWindow;
+	@FindBy (how = How.CSS, using = "a.btn.btn-lg[href='/switch-window']") @CacheLookup WebElement switchWindow;
+	
+	//@FindBy(xpath = "//a[@class='dropdown-item' and @href='/dropdown']") @CacheLookup WebElement dropdown;
+	@FindBy(how = How.CSS, using = "a.dropdown-item[href='/dropdown']") @CacheLookup WebElement dropdown;
+	
+	//@FindBy (how = How.CSS, using = "button#dropdownMenuButton") @CacheLookup WebElement drop_down_btn;
+	@FindBy (how = How.CSS, using = "button.btn.btn-primary.dropdown-toggle[data-toggle='dropdown']") @CacheLookup WebElement drop_down_btn;
+	
+    //@FindBy(xpath = "//a[@class='btn btn-lg' and @href='/checkbox']") WebElement checkbox;
+    @FindBy(how = How.CSS, using = "a.btn.btn-lg[href='/checkbox']") WebElement checkbox;
+    
+    //@FindBy (how = How.XPATH, using = "//a[@class='btn btn-lg' and @href='/autocomplete']") @CacheLookup WebElement btnAutocomplete;
+	@FindBy (how = How.CSS, using = "a.btn.btn-lg[href='/autocomplete']") @CacheLookup WebElement btnAutocomplete;
+	
+    //@FindBy (how = How.XPATH, using = "//a[@class = \"dropdown-item\" and @href=\"/datepicker\"]") @CacheLookup WebElement datePicker;
+	@FindBy (how = How.CSS, using = "a.dropdown-item[href='/datepicker']") @CacheLookup WebElement datePicker;
+	
+	//@FindBy (xpath = "//input[@type = 'text' and @class= 'form-control' and @id= 'postal_code' and @placeholder='Zip code']") WebElement zip_code;
+	@FindBy (how = How.CSS, using = "input#postal_code[placeholder='Zip code']") @CacheLookup WebElement zip_code;
+	
+    //@FindBy (id = "autocomplete") @CacheLookup WebElement Address;
+	@FindBy (how = How.CSS, using = "input.form-control[placeholder = 'Enter address']") @CacheLookup WebElement Address;
+	
+	//@FindBy (how = How.ID, using = "navbarDropdownMenuLink") @CacheLookup WebElement Components;
+    @FindBy (how = How.CSS, using = "a#navbarDropdownMenuLink[data-toggle = 'dropdown']") @CacheLookup WebElement Components;
+	
+
 	
 	/*LEARNING BITE : FOR -VE TESTING, YOU CAN PUT A DOT IN THE OBJECTS LOCATED ABOVE*/
 	
