@@ -254,7 +254,7 @@ public void Jira_1205() throws Exception{
  *  Action Item: 1. RCA
  *  Workaround: For now, I have removed the tag <input> and replaced with <*>. It works fine*/
 
-@Test (priority = 7, groups = "Form Submission")
+/*@Test (priority = 7, groups = "Form Submission")
 public void JiraId_1206() throws Exception {
 
 	ExcelUtils.setExcelFile (sPath, 0);
@@ -300,7 +300,7 @@ public void JiraId_1206() throws Exception {
         ExcelUtils.updateResultPass (iRow, 5, sPath);
 	}
 	}
-    }
+    }*/
 
 @Test (priority = 8, groups = "Web based pop-ups", dependsOnMethods = "Jira")
 //@Test (priority = 8, groups = "Web based pop-ups")

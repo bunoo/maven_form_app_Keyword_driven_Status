@@ -2,7 +2,7 @@
 <testng-results skipped="0" failed="1" ignored="0" total="9" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="126185" started-at="2020-02-29T17:52:24 IST" finished-at="2020-02-29T17:54:30 IST">
+  <suite name="Default suite" duration-ms="126796" started-at="2020-03-03T18:06:25 IST" finished-at="2020-03-03T18:08:32 IST">
     <groups>
       <group name="Web based pop-ups">
         <method signature="DriverScript.JiraId_1207()[pri:8, instance:test.DriverScript@3224f60b]" name="JiraId_1207" class="test.DriverScript"/>
@@ -30,62 +30,62 @@
         <method signature="DriverScript.JiraId_1201()[pri:3, instance:test.DriverScript@3224f60b]" name="JiraId_1201" class="test.DriverScript"/>
       </group> <!-- Validation of hyperlink -->
     </groups>
-    <test name="Default test" duration-ms="126185" started-at="2020-02-29T17:52:24 IST" finished-at="2020-02-29T17:54:30 IST">
+    <test name="Default test" duration-ms="126796" started-at="2020-03-03T18:06:25 IST" finished-at="2020-03-03T18:08:32 IST">
       <class name="test.DriverScript">
-        <test-method status="PASS" signature="pre_requisute()[pri:0, instance:test.DriverScript@3224f60b]" name="pre_requisute" is-config="true" duration-ms="33551" started-at="2020-02-29T17:52:24 IST" finished-at="2020-02-29T17:52:58 IST">
+        <test-method status="PASS" signature="pre_requisute()[pri:0, instance:test.DriverScript@3224f60b]" name="pre_requisute" is-config="true" duration-ms="35002" started-at="2020-03-03T18:06:25 IST" finished-at="2020-03-03T18:07:00 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pre_requisute -->
-        <test-method status="PASS" signature="Jira()[pri:1, instance:test.DriverScript@3224f60b]" name="Jira" duration-ms="28981" started-at="2020-02-29T17:52:58 IST" finished-at="2020-02-29T17:53:27 IST">
+        <test-method status="PASS" signature="Jira()[pri:1, instance:test.DriverScript@3224f60b]" name="Jira" duration-ms="27426" started-at="2020-03-03T18:07:00 IST" finished-at="2020-03-03T18:07:27 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Jira -->
-        <test-method status="PASS" signature="JiraId_1200()[pri:2, instance:test.DriverScript@3224f60b]" name="JiraId_1200" duration-ms="4549" started-at="2020-02-29T17:53:27 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-02-29T17:53:31 IST">
+        <test-method status="PASS" signature="JiraId_1200()[pri:2, instance:test.DriverScript@3224f60b]" name="JiraId_1200" duration-ms="4554" started-at="2020-03-03T18:07:27 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-03-03T18:07:32 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- JiraId_1200 -->
-        <test-method status="PASS" signature="JiraId_1201()[pri:3, instance:test.DriverScript@3224f60b]" name="JiraId_1201" duration-ms="41327" started-at="2020-02-29T17:53:31 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-02-29T17:54:13 IST">
+        <test-method status="PASS" signature="JiraId_1201()[pri:3, instance:test.DriverScript@3224f60b]" name="JiraId_1201" duration-ms="39118" started-at="2020-03-03T18:07:32 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-03-03T18:08:11 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- JiraId_1201 -->
-        <test-method status="PASS" signature="JiraId_1202()[pri:4, instance:test.DriverScript@3224f60b]" name="JiraId_1202" duration-ms="3035" started-at="2020-02-29T17:54:13 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-02-29T17:54:16 IST">
+        <test-method status="PASS" signature="JiraId_1202()[pri:4, instance:test.DriverScript@3224f60b]" name="JiraId_1202" duration-ms="4467" started-at="2020-03-03T18:08:11 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-03-03T18:08:16 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- JiraId_1202 -->
-        <test-method status="PASS" signature="Jira_1203()[pri:5, instance:test.DriverScript@3224f60b]" name="Jira_1203" duration-ms="3429" started-at="2020-02-29T17:54:16 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-02-29T17:54:19 IST">
+        <test-method status="PASS" signature="Jira_1203()[pri:5, instance:test.DriverScript@3224f60b]" name="Jira_1203" duration-ms="3373" started-at="2020-03-03T18:08:16 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-03-03T18:08:19 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Jira_1203 -->
-        <test-method status="PASS" signature="Jira_1205()[pri:6, instance:test.DriverScript@3224f60b]" name="Jira_1205" duration-ms="3475" started-at="2020-02-29T17:54:19 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-02-29T17:54:23 IST">
+        <test-method status="PASS" signature="Jira_1205()[pri:6, instance:test.DriverScript@3224f60b]" name="Jira_1205" duration-ms="3397" started-at="2020-03-03T18:08:19 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-03-03T18:08:22 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Jira_1205 -->
-        <test-method status="FAIL" signature="JiraId_1206()[pri:7, instance:test.DriverScript@3224f60b]" name="JiraId_1206" duration-ms="1702" started-at="2020-02-29T17:54:23 IST" finished-at="2020-02-29T17:54:24 IST">
+        <test-method status="FAIL" signature="JiraId_1206()[pri:7, instance:test.DriverScript@3224f60b]" name="JiraId_1206" duration-ms="1872" started-at="2020-03-03T18:08:22 IST" finished-at="2020-03-03T18:08:24 IST">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"input.id#first-name[placeholder= 'Enter first name']"}
-  (Session info: chrome=79.0.3945.130)
+  (Session info: chrome=80.0.3987.122)
   (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 10.0.18362 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-8SKO70U', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\ABHAKU~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63950}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 79.0.3945.130, webStorageEnabled: true}
-Session ID: 6829ae6e04bc6f8a19439a62f44d0cf0
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\ABHAKU~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62649}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 80.0.3987.122, webStorageEnabled: true}
+Session ID: 89877c28a211506a7c380863d5b5c9cb
 *** Element info: {Using=css selector, value=input.id#first-name[placeholder= 'Enter first name']}]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"input.id#first-name[placeholder= 'Enter first name']"}
-  (Session info: chrome=79.0.3945.130)
+  (Session info: chrome=80.0.3987.122)
   (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 10.0.18362 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-8SKO70U', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\ABHAKU~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63950}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 79.0.3945.130, webStorageEnabled: true}
-Session ID: 6829ae6e04bc6f8a19439a62f44d0cf0
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\ABHAKU~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62649}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 80.0.3987.122, webStorageEnabled: true}
+Session ID: 89877c28a211506a7c380863d5b5c9cb
 *** Element info: {Using=css selector, value=input.id#first-name[placeholder= 'Enter first name']}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
@@ -142,15 +142,15 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- JiraId_1206 -->
-        <test-method status="PASS" signature="JiraId_1207()[pri:8, instance:test.DriverScript@3224f60b]" name="JiraId_1207" duration-ms="2298" started-at="2020-02-29T17:54:25 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-02-29T17:54:27 IST">
+        <test-method status="PASS" signature="JiraId_1207()[pri:8, instance:test.DriverScript@3224f60b]" name="JiraId_1207" duration-ms="3479" started-at="2020-03-03T18:08:24 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-03-03T18:08:28 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- JiraId_1207 -->
-        <test-method status="PASS" signature="Jira_1204()[pri:8, instance:test.DriverScript@3224f60b]" name="Jira_1204" duration-ms="1477" started-at="2020-02-29T17:54:27 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-02-29T17:54:28 IST">
+        <test-method status="PASS" signature="Jira_1204()[pri:8, instance:test.DriverScript@3224f60b]" name="Jira_1204" duration-ms="1921" started-at="2020-03-03T18:08:28 IST" depends-on-methods="test.DriverScript.Jira" finished-at="2020-03-03T18:08:30 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Jira_1204 -->
-        <test-method status="PASS" signature="closeTheSession()[pri:0, instance:test.DriverScript@3224f60b]" name="closeTheSession" is-config="true" duration-ms="1824" started-at="2020-02-29T17:54:28 IST" finished-at="2020-02-29T17:54:30 IST">
+        <test-method status="PASS" signature="closeTheSession()[pri:0, instance:test.DriverScript@3224f60b]" name="closeTheSession" is-config="true" duration-ms="1806" started-at="2020-03-03T18:08:30 IST" finished-at="2020-03-03T18:08:32 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeTheSession -->

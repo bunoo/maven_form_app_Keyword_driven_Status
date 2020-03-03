@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="62.574" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="114.878" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_181\jre\bin"/>
@@ -45,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_181\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -64,5 +64,12 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="JiraId_1207" classname="test.DriverScript" time="32.185"/>
+  <testcase name="Jira" classname="test.DriverScript" time="23.73"/>
+  <testcase name="JiraId_1200" classname="test.DriverScript" time="7.797"/>
+  <testcase name="JiraId_1201" classname="test.DriverScript" time="39.828"/>
+  <testcase name="JiraId_1202" classname="test.DriverScript" time="2.316"/>
+  <testcase name="Jira_1203" classname="test.DriverScript" time="3.354"/>
+  <testcase name="Jira_1205" classname="test.DriverScript" time="2.672"/>
+  <testcase name="JiraId_1207" classname="test.DriverScript" time="1.784"/>
+  <testcase name="Jira_1204" classname="test.DriverScript" time="1.256"/>
 </testsuite>

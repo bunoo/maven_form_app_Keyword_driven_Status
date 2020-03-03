@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name = "TestNg_Basics_Config">
-  <test name = "how to run functional tests during build prcess">
-      <classes>
-          <class name = "test.DriverScript"></class>
-      </classes>
-  </test>
-</suite>
